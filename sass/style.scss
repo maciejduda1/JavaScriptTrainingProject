@@ -1,0 +1,27 @@
+$h1color: blue;
+$linkcolor: pink;
+
+@mixin nav-links {
+	color: $linkcolor;
+	text-decoration: none;
+	text-align: center;
+}
+
+h1 {
+	color: $h1color;
+}
+
+header{
+	nav {
+		display: flex;
+		ul {
+			list-style-type: none;
+			display: flex;
+			li {
+				a {
+					@include nav-links();
+				}
+			}	
+		}
+	}
+}

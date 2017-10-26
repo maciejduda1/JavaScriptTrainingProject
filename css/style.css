@@ -1,1 +1,14 @@
-﻿
+h1 {
+  color: blue; }
+
+header nav {
+  display: flex; }
+  header nav ul {
+    list-style-type: none;
+    display: flex; }
+    header nav ul li a {
+      color: pink;
+      text-decoration: none;
+      text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
