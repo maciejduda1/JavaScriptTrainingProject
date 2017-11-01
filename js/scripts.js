@@ -1,10 +1,7 @@
-﻿var a;
-var h;
-
-function getTriangleArea(a, h){
+﻿function getTriangleArea(a, h){
 	var triangleArea;
 	if ((a < 0) || (h < 0)) {
-		alert('Nieprawidłowe wartości!');
+		return triangleArea = ('Nieprawidłowe wartości!');
 	}
 	else {
 		triangleArea = a * h / 2;
