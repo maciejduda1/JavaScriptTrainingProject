@@ -6,16 +6,19 @@ var tabAllNames = tabManName.concat(tabWomanName);
 console.log(tabAllNames); //działa!
 
 //Tworzymy funkcję dodającą dane do tablicy o ile już nie ma w niej duplikatu dodawanych danych!
-var newName = 'Marian';
+//var newName = 'Marian';
 
-function tableAdd(newName) {
-	if (tabAllNames.indexOf(newName) === -1) {
-		return tabAllNames.push(newName);
+
+function tableAdd(tableName, newName) {
+	if (tableName.indexOf(newName) === -1) {
+		 tableName.push(newName);
+		 return ('Do tablicy dodano nowy zapis: ' + newName + ' Obecnie w tablicy znajdują się następujące elementy: ' + tableName );
 	}
 	else {
-		return console.log('Duplikat!');
+		return ('Starasz się dodać duplikat! Nie ma na to zgody w tym mieście! :)  ' + ' Aktualna zawartość tablicy się nie zmieniła i wynosi: ' + tableName );
 	}
 }
 
-console.log(tableAdd(newName)); //zgodnie z funkcją push, jako wartość funkcja zwraca długość tablicy. W przypadku duplikatu, zwraca wartość Undefined.
-console.log(tabAllNames); // jak widać, po wywołaniu funkcji, tablica się zmieniła - rozrosła
+console.log(tableAdd(['Adam', 'Wojtek', 'Tomasz', 'Fabian', 'Artur', 'Przemek'], 'Tomasz')); // dodano duplikat
+console.log(tableAdd(['Adam', 'Wojtek', 'Tomasz', 'Fabian', 'Artur', 'Przemek'], 'Maciek')); //dodano nowy zapis
+
