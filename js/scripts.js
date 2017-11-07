@@ -125,10 +125,10 @@ function setGamePoints() {																	// funkcja zmieniająca wynik w tabli
 	if ((computer.score === 10) || (player.score === 10)) {
 		var playerLooser = document.getElementById('js-winnerLooser');
 		if (computer.score === 10) {
-			playerLooser.innerHTML = "Przegrałeś!"
+			playerLooser.innerHTML = "Przegrałeś!";
 		}
 		if (player.score === 10) {
-			playerLooser.innerHTML = "Wygrałeś!"
+			playerLooser.innerHTML = "Wygrałeś!";
 		}
 		gameState = 'ended';
 		setGameElements();
