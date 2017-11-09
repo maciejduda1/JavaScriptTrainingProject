@@ -110,15 +110,15 @@ function checkRoundWinner(playerPick, computerPick) {										// Funkcja sprawd
 	playerResultElem.innerHTML = computerResultElem.innerHTML = '';							// 1. Ustala wartość wyniku na ' ' (zmienia kod HTML)
 	 //var winnerIs = 'player';																// 2. W zależności od parametrów wejściowych zmienia wynik:
 	if (playerPick == computerPick) {														// 3. Poprzez analizę przypadków, porównuje wartość parametrów playerPick i ComputerPick
-		setResult('noone'); // winnerIs = 'noone'; // remis														  
+		 // remis														  
 	} else if (																				
 		(computerPick == 'rock' &&  playerPick == 'scissors') ||
 		(computerPick == 'scissors' &&  playerPick == 'paper') ||
 		(computerPick == 'paper' &&  playerPick == 'rock')) {
-		setResult('computer'); //winnerIs = 'computer';
+		setResult(computerResultElem); //winnerIs = 'computer';
 	}
 	else {
-	setResult ('player');
+	setResult (playerResultElem);
 	}
 }
 
@@ -138,12 +138,12 @@ function setGamePoints() {																	// funkcja zmieniająca wynik w tabli
 	} 
 }
 
-function setResult(winnerIs){
-	if (winnerIs == 'player') {
+function setResult(x){
+	if (x == playerResultElem) {
 		playerResultElem.innerHTML = "Win!";
 		player.score++;
 		setGamePoints();
-	} else if (winnerIs == 'computer') {
+	} else if (x == computerResultElem) {
 		computerResultElem.innerHTML = "Win!";
 		computer.score++;
 		setGamePoints();
