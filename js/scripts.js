@@ -24,15 +24,15 @@ $('span').each(function(index, element){
 	$(element).attr('id' , "special" + index);		// ten sam efekt osiągnąłem dając funkcji jedynie paramter index, a $(element) zastępując $(this) :> 
 });
 
-var ignored = [$("#special1"), $("#special2")];          
-console.log(ignored[0]);
-
-var allSpan = $('span');
-console.log(allSpan);
+//var ignored = $.makeArray([$("#special1"), $("#special2")]);       
+var ignored =['special1', 'special2'];
+console.log(ignored);
 
 
-var diff = $(allSpan).not(ignored).get();
-console.log(diff);
+$('span').each(function(index, element){
+	if ($.inArray($(element).attr('id'), ignored) == -1){
+		$(element).css('color' , 'red');
+	}
+});
 
-$(diff).css('color' , 'red');
 
