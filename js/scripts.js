@@ -31,21 +31,11 @@ var computerResultElem = document.getElementById('js-computerResult');
 
 newGameBtn.addEventListener('click', newGame);                                            // Przypisujemy mu nasłuchiwanie eventu - kliknięcia w newGame. co powoduje odpalenie
 																						  // funkcji newGame - pobiera imię gracza i zaczyna grę. Szczegóły w linii 78-87.																  
-
 pickRock.addEventListener('click', function() { playerPick('rock'); });					  // Na zmienną dodajemy listener eventu 'click'. Odpali on funkcję wewnątrz funkcji domyślnej
 pickPaper.addEventListener('click', function() { playerPick('paper'); });				  // o parametrze 'rock', 'paper' lub 'scisors' - string! funkcja opisana w linii 97-98
 pickScissors.addEventListener('click', function() { playerPick('scissors'); });
 
-
-
-
-
-
-
-
-
 // Funkcje:
-
 
 function setGameElements() {	
 	winnerScreen.style.display = 'none';
@@ -74,9 +64,6 @@ function setGameElements() {
 	}
 }
 
-
-
-
 function newGame() {																		// funkcja newGame, odpalana po kilknięciu w przycisk newGameBtn
 	player.name = prompt('Please enter your name', 'imię gracza');							// pyta o imię gracza i zapisuje w zmiennej player
 	if (player.name) {																		// podanie danych powoduje szereg działań programu:
@@ -92,10 +79,7 @@ function getComputerPick() {																// funkcja losująca dla komputera
 	var possiblePicks = ['rock', 'paper', 'scissors'];										// możliwe wyniki: 'rock', 'paper', 'scissors'
 	return possiblePicks[Math.floor(Math.random()*3)];										// Math.random daje losową liczbę zmiennoprzecinkową (poniżej 1) * 3 = poniżej 3
 }																							// Math.floor zaokrągla liczby zmiennoprzecinkowe w dół do całkowitej liczby (tu: 0, 1 , 2)
-																							// dzięki temu zwracana wartość funkcji to zawsze jedna z 3 opcji!
-
-
-
+																							// dzięki temu zwracana wartość funkcji to zawsze jedna z 3 opcji!/////////
 function playerPick(playerPick) {															// funkcja wyboru dla gracza i komputera - w linii 35-37 przypisaliśmy nasłuch na buttony odpowiedzialne za wybór opcji w grze
 	var computerPick = getComputerPick();													//w związku z tym kliknięcie danej opcji powoduje odpalenie funkcji playerPick 
 	playerPickElem.innerHTML = playerPick;													//z parametrem playerPick (string) wynikającym z kodu w linii 35-37 - 'rock', 'paper', 'scissors'
@@ -104,8 +88,6 @@ function playerPick(playerPick) {															// funkcja wyboru dla gracza i k
 }																							// 2. w tablicy wyników zmieniamy kod html, na wartość parametru playerPick(linia 35-37)
 																							// 3. w tablicy wyników zmieniamy kod html, na wartość wynikającą z funkcji getComputerPick (zmiennej computerPick)
 																							// 4. odpalamy funkcję sprawdzającą kto wygrał w grze checkRoundWinner z parametrami równymi zmiennym playerPick i computerPick!
-
-
 function checkRoundWinner(playerPick, computerPick) {										// Funkcja sprawdzająca wygraną w grze przyjmująca jako parametry 2 zmienne 
 	playerResultElem.innerHTML = computerResultElem.innerHTML = '';							// 1. Ustala wartość wyniku na ' ' (zmienia kod HTML)
 	 //var winnerIs = 'player';																// 2. W zależności od parametrów wejściowych zmienia wynik:
@@ -133,12 +115,11 @@ function setGamePoints() {																	// funkcja zmieniająca wynik w tabli
 	} 
 }
 
-function setResult(x, y){
-		x.innerHTML = "Win!";
-		y.score++;
+function setResult(resultElemDisplay, winningSide){
+		resultElemDisplay.innerHTML = "Win!";
+		winningSide.score++;
 		setGamePoints();
 }
-
 
 // Odpalenie core gry (działają też listenery)
 
