@@ -7,7 +7,7 @@ setInterval(changeSlide, 5000);
 
 
 function changeSlide(){
-	carouselList.animate({'marginLeft':-800}, 3000, moveFirstSlide);
+	carouselList.animate({'marginLeft':-400}, 3000, moveFirstSlide);
 }
 
 
