@@ -115,10 +115,10 @@ function checkRoundWinner(playerPick, computerPick) {										// Funkcja sprawd
 		(computerPick == 'rock' &&  playerPick == 'scissors') ||
 		(computerPick == 'scissors' &&  playerPick == 'paper') ||
 		(computerPick == 'paper' &&  playerPick == 'rock')) {
-		setResult(computerResultElem); //winnerIs = 'computer';
+		setResult(computerResultElem, computer); //winnerIs = 'computer';
 	}
 	else {
-	setResult (playerResultElem);
+	setResult (playerResultElem, player);
 	}
 }
 
@@ -127,27 +127,16 @@ function setGamePoints() {																	// funkcja zmieniająca wynik w tabli
 	computerPointsElem.innerHTML = computer.score;
 	if ((computer.score === 10) || (player.score === 10)) {
 		var playerLooser = document.getElementById('js-winnerLooser');
-		if (computer.score === 10) {
-			playerLooser.innerHTML = "Przegrałeś!";
-		}
-		if (player.score === 10) {
-			playerLooser.innerHTML = "Wygrałeś!";
-		}
+		playerLooser.innerHTML = (computer.score === 10) ? "Przegrałeś!" : "Wygrałeś!";
 		gameState = 'ended';
 		setGameElements();
 	} 
 }
 
-function setResult(x){
-	if (x == playerResultElem) {
-		playerResultElem.innerHTML = "Win!";
-		player.score++;
+function setResult(x, y){
+		x.innerHTML = "Win!";
+		y.score++;
 		setGamePoints();
-	} else if (x == computerResultElem) {
-		computerResultElem.innerHTML = "Win!";
-		computer.score++;
-		setGamePoints();
-	}
 }
 
 
