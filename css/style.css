@@ -12,7 +12,6 @@ ul {
 	flex-direction: row;
 }
 
-
 li {
 	width: 400px;
 	height: 300px;
@@ -29,4 +28,18 @@ img{
 	width: 400px;
 	margin: 0 auto;
 	overflow: hidden;
+}
+.buttons{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 300px;
+	width: 400px;
+}
+#leftArrow {
+
+}
+#rightArrow{
+	
 }

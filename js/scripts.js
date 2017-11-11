@@ -3,7 +3,7 @@
 });
 
 var carouselList = $("#carousel ul");
-setInterval(changeSlide, 5000);
+var intervalSetup = setInterval(changeSlide, 8000);
 
 
 function changeSlide(){
@@ -16,4 +16,23 @@ function moveFirstSlide(){
 	var lastItem = carouselList.find("li:last");
 	lastItem.after(firstItem);
 	carouselList.css({marginLeft:0});
+}
+
+$("#leftArrow").click(function(){
+	changeSlide();
+	clearInterval(intervalSetup);
+	return intervalSetup = setInterval(changeSlide, 8000);
+});
+
+$("#rightArrow").click(function(){
+	moveLastSlide();
+	clearInterval(intervalSetup);
+	return intervalSetup = setInterval(changeSlide, 8000);
+})
+
+function moveLastSlide(){
+	var firstItem = carouselList.find("li:first");
+	var lastItem = carouselList.find("li:last");
+	lastItem.before(firstItem);
+	carouselList.css({marginLeft:-400});
 }
