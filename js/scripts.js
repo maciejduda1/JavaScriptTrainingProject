@@ -24,7 +24,8 @@ function changeSlideAnimation(animationDirection){
 		carouselList.animate({'marginLeft':-400}, 500, moveSlide);
 	}
 	else if (animationDirection == 'leftDirection'){
-		carouselList.animate({'marginLeft':0}, 500, moveOtherSide);
+		moveOtherSide()
+		carouselList.animate({'marginLeft':0}, 500);
 	}
 	else{
 		carouselList.animate({'marginLeft':-400}, 2000, moveSlide);	
@@ -47,8 +48,8 @@ function intervalSetup(){
 function moveOtherSide(){
 var firstItem = carouselList.find("li:first");
 var lastItem = carouselList.find("li:last");
-carouselList.css({marginLeft: -400});
 firstItem.before(lastItem);
+carouselList.css({marginLeft: -400});
 }
 
 // Karuzela:
