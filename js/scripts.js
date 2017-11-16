@@ -5,7 +5,7 @@
 //Zmienne
 var carouselChangeTimer;
 var carouselList = $("#carousel ul");
-
+var durringAnimation = false;
 // Listenery:
 
 $("#leftArrow").click(function(){
@@ -24,8 +24,14 @@ function changeSlideAnimation(animationDirection){
 		carouselList.animate({'marginLeft':-400}, 500, moveSlide);
 	}
 	else if (animationDirection == 'leftDirection'){
-		moveOtherSide()
-		carouselList.animate({'marginLeft':0}, 500);
+		if (durringAnimation == true) {
+			return;
+		}
+		else {	
+		durringAnimation = true;	
+		moveOtherSide();
+		carouselList.animate({'marginLeft':0}, 500, function(){ durringAnimation = false;});
+		}
 	}
 	else{
 		carouselList.animate({'marginLeft':-400}, 2000, moveSlide);	
