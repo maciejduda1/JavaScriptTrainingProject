@@ -6,12 +6,11 @@
 }
 
 Phone.prototype.getWarrantyCost = function(){
-	console.log('the extended Varrancy Price of this phone is: ' + this.price * 0.1);
+	return this.price * 0.1;
 };
 
 Phone.prototype.printInfo = function(){
-	console.log('The phone brand is ' + this.brand + ', color is ' + this.color + ' and the price is ' + this.price + '.');
-	this.getWarrantyCost(); 
+	console.log('The phone brand is ' + this.brand + ', color is ' + this.color + ' and the price is ' + this.price + '.' + 'Koszt wydłużonej gwarancji wynosi: ' + this.getWarrantyCost()); 
 };
 
 Phone.prototype.oesVersion = function(){
