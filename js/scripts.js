@@ -18,7 +18,7 @@
 		function createColumn() {
 			var $column = $('<div>').addClass('column');
 			var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
-			var $columnCardList = $('<ul>').addClass('column-card-list');
+			var $columnCardList = $('<ul>').addClass('column-card-list').css("min-height", "150px");
 			var $columnDelete = $('<button>').addClass('btn-delete').text('x');
 			var $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
 		
@@ -28,7 +28,13 @@
 			});
 
 			$columnAddCard.click(function() {
-				self.addCard(new Card(prompt("Enter the name of the card")));
+				var cardNamePrompt = prompt("Enter the name of the card");
+			//	self.addCard(new Card(prompt("Enter the name of the card")));
+				if (cardNamePrompt == null) {
+					return;
+				}
+				self.addCard(new Card(cardNamePrompt));
+
 			});
 
 			$column.append($columnTitle)
@@ -99,6 +105,9 @@
 	$('.create-column').click(function(){
 		var name = prompt('Enter a column name');
 		var column = new Column(name);
+		if (name == null) {
+			return;
+		}
 		board.addColumn(column);
 	});
 
