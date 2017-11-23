@@ -1,1 +1,12 @@
-﻿
+﻿body {
+	background: #F9FBF6 url('https://thegoldwater.com/static/media_store/c74461ae2a9917a2482ac7b53f195b3c6e2fdd59e778c673256fb29d1b07f181.jpg') no-repeat center;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;	
+	flex-direction: column;
+	height: 100%;
+}
+p {
+	font-size: 20px;
+	color: darkred;
+}
