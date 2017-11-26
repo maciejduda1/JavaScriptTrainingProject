@@ -1,1 +1,36 @@
-﻿
+﻿main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color:  #00aced;
+	color: #FFF;
+	height: 100%;
+}
+
+.trigger, .twitter-button {
+	background: #0084b4;
+	color: #FFF;
+	font-size: 15px;
+	padding: 5%;
+	border-radius: 50%;
+	margin: 0 20px;
+	min-width: 150px;
+	min-height: 80px; 
+}
+
+#buttons-section {
+	display: flex;
+	align-items: center;
+	height: 10%;	
+}
+
+.fa {
+	color: #FFF;
+	padding: 5px;
+}
+
+a {
+	text-decoration: none;
+	color: #FFF;
+}
