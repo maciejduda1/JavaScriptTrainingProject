@@ -1,1 +1,21 @@
-﻿
+﻿#full-info {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+}
+#data-table{
+	border: 2px solid;
+	padding: 5%;
+}
+#flag-table-section {
+	display: flex;
+	justify-content: center;
+}
+
+#flag{
+	height :120px;
+	width: auto;
+}
+tr {
+	height: 40px;
+}
