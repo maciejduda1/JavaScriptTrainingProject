@@ -17,18 +17,19 @@ function searchCountries() {
 }
 
 function showCountriesList(resp){
-	var countryTable = resp;
 	countriesList.empty();
 	resp.forEach(function(item){
+		if (item.name.indexOf($('#country-name').val()[0].toUpperCase()) != -1){
 		$('<button>').addClass(item.name).text(item.name).appendTo($('<li>').appendTo(countriesList));
+		}
 	});	
 	
 	$('button').click(function(){
 		var buttonClass = $(this).attr("class");
-		var x = countryTable.filter(function(itemsToSearch){
+		var countryISelected = resp.filter(function(itemsToSearch){
 			return itemsToSearch.name == buttonClass;
 		});
-		displayCountryInfo(x);
+		displayCountryInfo(countryISelected);
 	});	
 }
 
