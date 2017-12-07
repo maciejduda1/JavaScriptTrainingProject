@@ -5,6 +5,39 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <script type="text/javascript" src="js/scripts.js"></script>
+	<h1>Country search engine</h1>
+	<button id="search">Search a country</button>
+	<input id="country-name" type="text" />
+	<h2>List of countries</h2>
+	<ul id="countries">
+		<li>No data</li>
+	</ul>
+	<div id="full-info">
+		<h1 id="country-name-full"></h1>
+		<div id="flag-table-section">
+			<div id="flag" style="padding: 20px">
+				
+			</div>
+			<table id="data-table">
+				<thead>
+					<th>Nazwa Prametru</th>
+					<th>Wartość</th>
+				</thead>
+				<tbody>
+					<tr id="capital">
+					</tr>
+					<tr id="currency">	
+					</tr>
+					<tr id="population">
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+   	<script type="text/javascript" src="js/scripts.js"></script>
   </body>
 </html>
