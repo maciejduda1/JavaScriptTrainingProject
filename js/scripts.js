@@ -20,16 +20,17 @@ function showCountriesList(resp){
 	countriesList.empty();
 	resp.forEach(function(item){
 		if (item.name.indexOf($('#country-name').val()[0].toUpperCase()) != -1){
-		$('<button>').addClass(item.name).text(item.name).appendTo($('<li>').appendTo(countriesList));
+			var newButton = $('<button>');
+			newButton.text(item.name).appendTo($('<li>').appendTo(countriesList));
+			
+			newButton.click(function(){
+				//console.log(newButton.text());
+				var countryISelected = resp.filter(function(itemsToSearch){
+					return itemsToSearch.name == newButton.text();
+					});
+				displayCountryInfo(countryISelected);
+			});	
 		}
-	});	
-	
-	$('button').click(function(){
-		var buttonClass = $(this).attr("class");
-		var countryISelected = resp.filter(function(itemsToSearch){
-			return itemsToSearch.name == buttonClass;
-		});
-		displayCountryInfo(countryISelected);
 	});	
 }
 
